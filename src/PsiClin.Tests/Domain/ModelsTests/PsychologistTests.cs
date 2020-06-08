@@ -1,6 +1,7 @@
-using xunit;
 using PsiClin.Domain.Models;
+using PsiClin.Domain.ValueObjects;
 using System;
+using Xunit;
 
 namespace PsiClin.Tests.Domain.ModelsTests
 {

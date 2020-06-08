@@ -1,6 +1,6 @@
 using System;
 using PsiClin.Domain.Core.Models;
-using PsiClin.Domain.Models.ValueObjects;
+using PsiClin.Domain.ValueObjects;
 
 namespace PsiClin.Domain.Models
 {
