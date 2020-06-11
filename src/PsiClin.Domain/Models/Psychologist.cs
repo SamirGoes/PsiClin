@@ -17,9 +17,14 @@ namespace PsiClin.Domain.Models
 
         public string RegisterNumber { get; private set; }
 
-        public void ScheduleAppointment(Patient patient)
+        public Appointment ScheduleAppointment(Patient patient, DateTime dateOfAppointment)
         {
-
+            var appointment = new Appointment(Guid.NewGuid(), dateOfAppointment);
+            
+            if(dateOfAppointment > DateTime.Now)
+                appointment.Reprove();
+            
+            return appointment;
         }
     }
 }
