@@ -1,9 +1,7 @@
-
 using PsiClin.Domain.Core.Bus;
-using PsiClin.Domain.Core.Commands;
 using PsiClin.Domain.Core.DomainNotifications;
 
-namespace PsiClin.Domain.Commands
+namespace PsiClin.Domain.Core.Commands
 {
     public class CommandHandler
     {
@@ -23,10 +21,10 @@ namespace PsiClin.Domain.Commands
 
         protected void NotifyValidationErrors(Command message)
         {
-            // foreach (var error in message. .Errors)
-            // {
-            //     _bus.RaiseEvent(new DomainNotification(message.MessageType, error.ErrorMessage));
-            // }
+            foreach (var error in message.Notifications)
+            {
+                _bus.RaiseEvent(new DomainNotification(error.Property, error.Message));
+            }
         }
 
         public bool Commit()
@@ -38,5 +36,4 @@ namespace PsiClin.Domain.Commands
             return false;
         }
     }
-
 }
